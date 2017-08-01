@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="assets/favicon.ico">
+
+    <title>Support | Asteria Aerospace</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="assets/narrow-jumbotron.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class="header clearfix">
+        <nav>
+          <ul class="nav nav-pills float-right">
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html">Create Ticket<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="check.html">Check Status</a>
+            </li>
+          </ul>
+        </nav>
+        <h3 class="text-muted">Asteria Support</h3>
+      </div>
+
+      <div class="jumbotron">
+        <h1 class="display-3">Create a new ticket.</h1>
+        <p class="lead">Every support request is assigned a unique ticket number which you can use to track the progress and responses online.</p>
+      </div>
+
+      <div class="form">
+          <form id="myForm">
+              <div class="form-group">
+                <label for="form-input-email">Email address</label>
+                <input type="email" class="form-control" id="form-input-email" aria-describedby="emailHelp" placeholder="Enter email">
+              </div>
+              <div class="form-group">
+                <label for="form-input-issue">Select an issue category</label>
+                <select class="form-control" id="form-input-issue">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="form-input-description">Describe the issue</label>
+                <textarea class="form-control" id="form-input-description" rows="3"></textarea>
+              </div>
+                <!-- <div class="form-group">
+                <label for="exampleInputFile">File input</label>
+                <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+                </div> -->
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <h5 class="ticket-id-display text-center hidden">Your ticket ID : <span class="ticket-id"></span></h5>
+          </form>
+      </div>
+
+      <footer class="footer">
+        <p>&copy; Asteria Aerospace 2017</p>
+      </footer>
+
+    </div> <!-- /container -->
+    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+    <script src="assets/jquery.min.js"></script>
+    <script src="my-firebase.js"></script>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="assets/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
