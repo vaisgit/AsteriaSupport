@@ -15,6 +15,7 @@ var uEmail = null;
 var uIssue = null;
 var uDetails = null;
 var ticketId = null;
+var utc = new Date().toJSON().slice(0,10).replace(/-/g,'/');
 
 var getValues = function() {
   uEmail = $('#form-input-email').val();
@@ -22,15 +23,15 @@ var getValues = function() {
   uDetails = $('#form-input-description').val();
   ticketId = Math.floor(Math.random() * 999999999999999999);
   $('.ticket-id').html(ticketId);
-  writeUserData(uEmail, uIssue, uDetails, ticketId);
 }
 
-function writeUserData(uEmail, uIssue, uDetails, ticketId) {
+function writeUserData(uEmail, uIssue, uDetails, ticketId, utc) {
   firebase.database().ref('tickets/' + ticketId).set({
     email: uEmail,
     issue: uIssue,
     desc : uDetails,
-    status : 'Unresolved'
+    status : 'Unresolved',
+    utc : utc
   });
 }
 
@@ -38,20 +39,5 @@ $("#myForm").submit(function(e){
   e.preventDefault();
   $('.ticket-id-display').removeClass('hidden');
   getValues();
+  writeUserData(uEmail, uIssue, uDetails, ticketId, utc);
 });
-
-// $('#myForm').submit(function() {
-//     // get all the inputs into an array.
-//     var $inputs = $('#myForm :input');
-//     console.log($inputs);
-//     // not sure if you wanted this, but I thought I'd add it.
-//     // get an associative array of just the values.
-//     var values = {};
-//     $inputs.each(function() {
-//         values[this.name] = $(this).val();
-//     });
-
-// });
-
-
-

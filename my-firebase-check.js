@@ -8,8 +8,8 @@ var config = {
     messagingSenderId: "787825209505"
 };
 firebase.initializeApp(config);
-
 var database = firebase.database();
+
 var uEmail = null;
 var ticketID = null;
 
@@ -30,17 +30,17 @@ var checkStatus = function() {
 	if(fetchedData == null){
 		display('Invalid Input!');
 	}
-  	var fetchedEmail = fetchedData.email;
-  	if(fetchedEmail === uEmail){
-  		display('Status : ' + arg.val().status);
-  	} else {
-  		display('Invalid Input!');
+	var fetchedEmail = fetchedData.email;
+	if(fetchedEmail === uEmail){
+		display('Status : ' + arg.val().status);
+	} else {
+		display('Invalid Input!');
 
-  	}
+	}
 	});
 }
 
 var display = function(arg) {
 	$('.status').html(arg);
-  	$('.ticket-status').removeClass('hidden');
+  $('.ticket-status').removeClass('hidden');
 }
